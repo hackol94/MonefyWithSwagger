@@ -1,5 +1,8 @@
 # Compiled class file
 *.class
+ApiTestSwagerDemo\.idea
+ApiTestSwagerDemo\.gradle
+ApiTestSwagerDemo\target
 
 # Log file
 *.log
