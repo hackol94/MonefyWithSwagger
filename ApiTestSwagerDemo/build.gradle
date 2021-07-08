@@ -1,0 +1,87 @@
+group 'qa'
+version '1.0-SNAPSHOT'
+repositories {
+    mavenLocal()
+    jcenter()
+}
+buildscript {
+    repositories {
+        mavenLocal()
+
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.1.6")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+compileJava {options.encoding = "UTF-8"}
+compileTestJava {options.encoding = "UTF-8"}
+
+ext{
+    serenity_version = "2.2.8"
+    serenity_cucumber_version = "1.9.33"
+    serenity_cucumber5_version = "2.2.5"
+}
+dependencies {
+    compile localGroovy()
+    compile "net.serenity-bdd:serenity-core:$serenity_version"
+    compile "net.serenity-bdd:serenity-junit:$serenity_version"
+    compile "io.cucumber:cucumber-java:5.7.0"
+    compile "io.cucumber:cucumber-junit:5.7.0"
+    compile "io.cucumber:cucumber-core:5.7.0"
+    compile "net.serenity-bdd:serenity-screenplay:$serenity_version"
+    compile "net.serenity-bdd:serenity-screenplay-webdriver:$serenity_version"
+    compile "net.serenity-bdd:serenity-emailer:2.1.0"
+    compile "net.serenity-bdd:serenity-screenplay-rest:$serenity_version"
+    compile "net.serenity-bdd:serenity-cucumber5:$serenity_cucumber5_version"
+    compile "net.serenity-bdd:serenity-junit:$serenity_version"
+
+    /*Persistence*/
+    compile "org.hibernate:hibernate-core:5.4.10.Final"
+    compile "javax.persistence:javax.persistence-api:2.2"
+    compile "com.zaxxer:HikariCP:3.4.2"
+    implementation "mysql:mysql-connector-java:8.0.19"
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+    implementation 'com.fasterxml.jackson.module:jackson-module-parameter-names:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    implementation 'redis.clients:jedis:3.1.0'
+    implementation 'biz.paluch.redis:lettuce:3.2.Final'
+    testCompile 'org.slf4j:slf4j-simple:1.7.7'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:1.7.0'
+    compile 'io.rest-assured:json-schema-validator:4.4.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java8
+    implementation group: 'io.cucumber', name: 'cucumber-java8', version: '5.0.0'
+// https://mvnrepository.com/artifact/org.everit.json/org.everit.json.schema
+    implementation group: 'org.everit.json', name: 'org.everit.json.schema', version: '1.5.1'
+
+    /* Lombok */
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+}
+
+test {
+
+    testLogging {
+        showStandardStreams = true
+    }
+    gradle.startParameter.continueOnFailure = true
+    /* Pass all system properties: */
+    systemProperties System.getProperties()
+    test.finalizedBy(aggregate)
+
+}
+sourceCompatibility = '1.8'

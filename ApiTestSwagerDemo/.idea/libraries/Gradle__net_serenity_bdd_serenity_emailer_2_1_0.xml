@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.serenity-bdd:serenity-emailer:2.1.0">
+    <CLASSES>
+      <root url="jar:///opt/gradle/gradle-7.0.1/bin/caches/modules-2/files-2.1/net.serenity-bdd/serenity-emailer/2.1.0/7752641023347cc4d3ba77d53933140d1ed45985/serenity-emailer-2.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///opt/gradle/gradle-7.0.1/bin/caches/modules-2/files-2.1/net.serenity-bdd/serenity-emailer/2.1.0/af387320c27b389941cff3d8f1f5d4d424a365c7/serenity-emailer-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

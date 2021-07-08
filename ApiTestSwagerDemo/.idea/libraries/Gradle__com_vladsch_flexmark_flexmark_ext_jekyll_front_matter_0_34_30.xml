@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.vladsch.flexmark:flexmark-ext-jekyll-front-matter:0.34.30">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../gradle-7.1.1/bin/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-jekyll-front-matter/0.34.30/921b4103cf75737e1dcb6e6142e3ecf6fea47bb2/flexmark-ext-jekyll-front-matter-0.34.30.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/vladsch/flexmark/flexmark-ext-jekyll-front-matter/0.34.30/flexmark-ext-jekyll-front-matter-0.34.30.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-jekyll-front-matter/0.34.30/663016ff043461884332d8cfad31628b49558bac/flexmark-ext-jekyll-front-matter-0.34.30-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../gradle-7.1.1/bin/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-jekyll-front-matter/0.34.30/43a9c1c1130ed89445d5a03f71731f85ccd5928e/flexmark-ext-jekyll-front-matter-0.34.30-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
