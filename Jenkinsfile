@@ -1,16 +1,24 @@
 pipeline {
-    agent none 
+    agent {
+        docker {
+            image 'loadimpact/k6:latest'
+            args '-p 3000:3000'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
     stages {
-        stage('Docker pull k6 envoronment') {
+        stage('Test') {
             steps {
-                sh 'docker pull sivesind/k6-gradle:latest'
+                sh ''
             }
         }
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
+        stage('Deliver') {
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                sh './jenkins/scripts/deliver.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)?'
+                sh './jenkins/scripts/kill.sh'
             }
         }
     }
