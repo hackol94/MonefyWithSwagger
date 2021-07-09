@@ -1,24 +1,23 @@
 pipeline {
-    agent {
-        docker {
-            image 'loadimpact/k6:latest'
-            args '-p 3000:3000'
-        }
-    }
+    agent any
     environment {
         CI = 'true'
     }
     stages {
-        stage('Test') {
+        stage('Build Docker compose k6 with influxdb') {
             steps {
-                sh ''
+                sh 'docker-compose up -d influxdb grafana'
+                sh 'docker-compose run k6 run k6/GetStressTest.js'
             }
-        }
-        stage('Deliver') {
+        },
+        stage('Server Start') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)?'
-                sh './jenkins/scripts/kill.sh'
+                sh 'loadEnvironment.sh'
+            }
+        },
+        stage('Execute Api Test') {
+            steps {
+                sh 'cd ApiTestSwagerDemo && gradle clean verify'
             }
         }
     }
