@@ -1,6 +1,6 @@
 # ![Serenity BDD](https://www.seekpng.com/png/detail/352-3521980_serenity-logo-serenity-bdd-logo.png "Logo Title Text 1")
 
-# Modify and Swagger Petstore Sample Test
+# Monefy and Swagger Petstore Sample Test
 
 [![gradle](https://img.shields.io/badge/gradle-v6.5.X-yellow.svg)](https://gradle.org/install/)
 
