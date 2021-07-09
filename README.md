@@ -1,12 +1,12 @@
 # ![Serenity BDD](https://www.seekpng.com/png/detail/352-3521980_serenity-logo-serenity-bdd-logo.png "Logo Title Text 1")
 
-# Monefy and Swagger Petstore Sample Test
+# Swagger Petstore Sample Test API And Performance project
 
 [![gradle](https://img.shields.io/badge/gradle-v6.5.X-yellow.svg)](https://gradle.org/install/)
 
 
->Este es un simple proyecto de Gradle que contiene un framework de pruebas UI y API que ejecuta un test base sobre metro cuadrado.com 
->
+>Este es un simple proyecto de Gradle que contiene un framework de pruebas API que ejecuta un test base sobre Swagger Petstore Sample
+>El proyecto de pruebas a nivel api esta en el direcctorio ApiTestSwagerDemo
 >Este framework ha sido desarrollado por Brayan Orlando Martinez Rodriguez con el fin de demostrar el manejo de un par de herramientas de automatización
 
 ## Prerequisites
@@ -22,8 +22,8 @@ Para poder clonar y usar este framework requiere que su computadora tenga las si
 Usamos [Gradle](http://www.gradle.org), un gestor de proyectos multiplataforma que nos permite gestionar las dependencias necesarias para usar y operar el framework
 Puedes instalar Gradle, en el siguiente sitio encuentras el paso a paso para hacerlo [install Gradle](http://www.gradle.org/installation) o use un [Gradle wrapper](http://www.gradle.org/docs/current/userguide/gradle_wrapper.html).
 
-* ´git clone git@github.com:hackol94/tyba_MetroCuadrado.git` this repository
-* Ingrese al directorio `cd tyba_MetroCuadrado`
+* ´git clone https://github.com/hackol94/MonefyWithSwagger.git` this repository
+* Ingrese al directorio `cd MonefyWithSwagger/ApiTestSwagerDemo`
 
 ##  Ejecución de pruebas
 
@@ -103,13 +103,13 @@ El proyecto tiene scripts de compilación para Gradle, y sigue la estructura de 
 src
   + main                                  | Origen
     + java                                | Sección de codigo java
-      + tyba.test.metrocuadrado           | Package base
+      + com.training.api                  | Package base
         + models                          | Modelos de las entidades
         + task                            | Task de usuario sobre el SUT
         + ui                              | Representa las paginas y sus objjetos
   + test                                  |
     + java                                | Test y soporte de las pruebas
-      + tyba.test.metrocuadrado           | Package base
+      + com.training.api                  | Package base
         + cast                            | Sección personalizada de codigo para seteo de los escenarios y usar variables de Environments 
         + enviroments                     | Modelo de control de variables del Serenity.conf para uso en pruebas
         + NavigateTo                      | Sección de paginas y navegación
@@ -142,7 +142,35 @@ Para obtener más información sobre Serenity BDD, puede leer el [**Serenity BDD
 * [**Serenity BDD Blog**](https://johnfergusonsmart.com/category/serenity-bdd/) : artículos habituales sobre Serenity BDD
 * [**The Serenity BDD Dojo**](https://serenitydojo.teachable.com)  - Capacitación en línea sobre Serenity BDD y sobre automatización de pruebas y BDD en general.
 
+>El proyecto de pruebas a nivel api esta en el direcctorio ApiTestSwagerDemo
 
+# Jenkins-configuration-file
+```
+pipeline {
+    agent any
+    environment {
+        CI = 'true'
+    }
+    stages {
+        stage('Build Docker compose k6 with influxdb') {
+            steps {
+                sh 'docker-compose up -d influxdb grafana'
+                sh 'docker-compose run --publish=8080:8080 k6 run //K6//GetLoadTest.js'
+            }
+        },
+        stage('Server Start') {
+            steps {
+                sh 'loadEnvironment.sh'
+            }
+        },
+        stage('Execute Api Test') {
+            steps {
+                sh 'cd ApiTestSwagerDemo && gradle clean verify'
+            }
+        }
+    }
+}
+```
 # Docker-k6-grafana-influxdb
 Demonstrates how to run load tests with containerised instances of K6, Grafana and InfluxDB.
 
