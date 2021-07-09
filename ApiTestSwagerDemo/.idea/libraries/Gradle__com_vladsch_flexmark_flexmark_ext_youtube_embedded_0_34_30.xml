@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.vladsch.flexmark:flexmark-ext-youtube-embedded:0.34.30">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../gradle-7.1.1/bin/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-youtube-embedded/0.34.30/bdee8af8a33df6d546c9650670e05b73420fde51/flexmark-ext-youtube-embedded-0.34.30.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/vladsch/flexmark/flexmark-ext-youtube-embedded/0.34.30/flexmark-ext-youtube-embedded-0.34.30.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-youtube-embedded/0.34.30/9393cfdee9326adb46c1b75b0e3e87dc6d523ef0/flexmark-ext-youtube-embedded-0.34.30-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../gradle-7.1.1/bin/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-youtube-embedded/0.34.30/75fc0def6624971aa1f691c43b2cd23548afa6be/flexmark-ext-youtube-embedded-0.34.30-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
