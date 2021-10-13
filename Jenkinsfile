@@ -4,18 +4,14 @@
             echo "test firefox"    
             }
     stage('Run Tests') 
-            parallel 
-                firefox: {
-                    node {
-                        echo "test firefox"
-                        //sh 'cd ApiTestSwagerDemo && gradle clean verify'
-                    }
-                }
-                chrome :{
-                    node {
-                        echo "test chrome"
-                        //sh 'cd ApiTestSwagerDemo && gradle clean verify'
-                    }
-                }
-            
-        
+        def stages = [:]
+
+        stages["firefox"] = {
+            echo "test firefox"
+        }
+        stages["chrome"] = {
+            echo "test chrome"
+        }
+
+        parallel(stages)
+    }
