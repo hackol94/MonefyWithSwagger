@@ -1,24 +1,21 @@
-pipeline {
-    agent any
-    environment {
-        CI = 'true'
-    }
-    stages {
-        stage('Build Docker compose k6 with influxdb') {
-            steps {
-                sh 'docker-compose up -d influxdb grafana'
-                sh 'docker-compose run --publish=8080:8080 k6 run //K6//GetLoadTest.js'
+    stage('Build nodes Selenium Grid')
+            node{
+            //sh 'docker-compose -f docker-compose-selenium-grid.yml up'
+            echo "test firefox"    
             }
-        },
-        stage('Server Start') {
-            steps {
-                sh 'loadEnvironment.sh'
-            }
-        },
-        stage('Execute Api Test') {
-            steps {
-                sh 'cd ApiTestSwagerDemo && gradle clean verify'
-            }
-        }
-    }
-}
+    stage('Run Tests') 
+            parallel 
+                firefox: {
+                    node {
+                        echo "test firefox"
+                        //sh 'cd ApiTestSwagerDemo && gradle clean verify'
+                    }
+                }
+                chrome :{
+                    node {
+                        echo "test chrome"
+                        //sh 'cd ApiTestSwagerDemo && gradle clean verify'
+                    }
+                }
+            
+        

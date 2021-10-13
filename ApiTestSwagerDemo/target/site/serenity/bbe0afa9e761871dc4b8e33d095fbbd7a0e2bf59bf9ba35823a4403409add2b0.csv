@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Store","Returns pet inventories by status","SUCCESS","2021-07-08T15:36:13.875-05:00[America/Bogota]","0.0","2.42"
-"Store","view inventory impact","SUCCESS","2021-07-08T15:36:16.317-05:00[America/Bogota]","0.0","0.46"
-"Store","create order","SUCCESS","2021-07-08T15:36:16.782-05:00[America/Bogota]","0.0","0.07"
-"Store","Find order","SUCCESS","2021-07-08T15:36:16.857-05:00[America/Bogota]","0.0","0.05"
-"Store","Delete order","SUCCESS","2021-07-08T15:36:16.913-05:00[America/Bogota]","0.0","0.05"
