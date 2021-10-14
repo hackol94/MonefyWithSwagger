@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Store" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-14T16:25:41" hostname="LAPTOP-3GDBUON0" time="15.103">
+  <properties/>
+  <testcase name="Buscar en Google 2" classname="Store" time="14.997"/>
+  <testcase name="Buscar en Google" classname="Store" time="15.047"/>
+  <system-out><![CDATA[
+@store @Grid2
+Scenario: Buscar en Google 2                                             ?[90m# src/test/resources/features/store.feature:12?[0m
+11:25:41.851 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Hacko/OneDrive/Documentos/SeleniumGrid/SerenityBase/src/test/resources/features/store.feature
+11:25:41.874 [Test worker] INFO  - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+Buscar en Google 2(store;buscar-en-google-2)
+-------------------------------------------------------------------
+
+@store @Grid
+Scenario: Buscar en Google                                               ?[90m# src/test/resources/features/store.feature:18?[0m
+11:25:41.933 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Hacko/OneDrive/Documentos/SeleniumGrid/SerenityBase/src/test/resources/features/store.feature
+11:25:41.967 [Test worker] INFO  - 
+ _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
+|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
+  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
+  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
+  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
+
+Buscar en Google(store;buscar-en-google)
+-------------------------------------------------------------------
+11:25:41.996 [Test worker] DEBUG net.thucydides.core.requirements.model.cucumber.CucumberParser - Added feature Store
+11:25:42.065 [Test worker] DEBUG net.thucydides.core.requirements.model.cucumber.CucumberParser - Added feature Store
+11:25:43.105 [Test worker] INFO  -    * Given que Carlos usa el navegador para realizar una busqueda en google
+Carlos
+11:25:43.201 [Test worker] INFO  -    * Given que Carlos usa el navegador para realizar una busqueda en google
+Carlos
+BrowserOK
+APÏCASTT
+BrowserOK
+APÏCASTT
+11:25:44.018 [Test worker] INFO  -      * Carlos opens the Google home page
+11:25:44.023 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STARTING STEP: SearchInGoogleStepDefinition.lambda$new$0 - !#title
+11:25:44.028 [Test worker] INFO  -        * Carlos opens the Google page
+11:25:44.029 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STARTING STEP: SearchInGoogleStepDefinition.lambda$new$0 - {0} opens the #targetPageName
+11:25:44.085 [Test worker] INFO  -      * Carlos opens the Google home page
+11:25:44.091 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STARTING STEP: SearchInGoogleStepDefinition.lambda$new$0 - !#title
+11:25:44.094 [Test worker] INFO  -        * Carlos opens the Google page
+11:25:44.095 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STARTING STEP: SearchInGoogleStepDefinition.lambda$new$0 - {0} opens the #targetPageName
+11:25:54.413 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Opening darkroom
+11:25:54.415 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Opening darkroom
+11:25:54.419 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Darkroom processing line starting up
+11:25:54.419 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Darkroom processing line starting up
+11:25:55.007 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\28161a643dda368adc994ff3ca45876d22d500c1477877caf624a6128e79b4a0.png
+11:25:55.008 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Processing screenshot image in /var/screenshots/screenshot-9109546276292356129
+11:25:55.008 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Saving screenshot to C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\28161a643dda368adc994ff3ca45876d22d500c1477877caf624a6128e79b4a0.png
+11:25:55.009 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\5f39b9ffd21027524512d8c48a7a9baaddb3e2e6b18a9b7234d3eb8c773b5ce5.png
+11:25:55.010 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Processing screenshot image in /var/screenshots/screenshot-6484826419015052469
+11:25:55.012 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Saving screenshot to C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\5f39b9ffd21027524512d8c48a7a9baaddb3e2e6b18a9b7234d3eb8c773b5ce5.png
+11:25:55.019 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STEP DONE: {0} opens the #targetPageName
+11:25:55.020 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STEP DONE: {0} opens the #targetPageName
+11:25:55.048 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STEP DONE: !#title
+  ?[32mGiven ?[0m?[32mque ?[0m?[32m?[1mCarlos?[0m?[32m usa el navegador para realizar una busqueda en google?[0m ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:15)?[0m
+11:25:55.054 [Test worker] DEBUG net.thucydides.core.steps.StepInterceptor - STEP DONE: !#title
+  ?[32mGiven ?[0m?[32mque ?[0m?[32m?[1mCarlos?[0m?[32m usa el navegador para realizar una busqueda en google?[0m ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:15)?[0m
+11:25:55.301 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\28161a643dda368adc994ff3ca45876d22d500c1477877caf624a6128e79b4a0.png
+11:25:55.312 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\5f39b9ffd21027524512d8c48a7a9baaddb3e2e6b18a9b7234d3eb8c773b5ce5.png
+11:25:55.321 [Test worker] INFO  -    * When solicite información a google sobre pinguinos
+  ?[32mWhen ?[0m?[32msolicite informaciÃ³n a google sobre pinguinos?[0m                     ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:22)?[0m
+11:25:55.327 [Test worker] INFO  -    * When solicite información a google sobre pinguinos
+  ?[32mWhen ?[0m?[32msolicite informaciÃ³n a google sobre pinguinos?[0m                     ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:22)?[0m
+11:25:55.581 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\28161a643dda368adc994ff3ca45876d22d500c1477877caf624a6128e79b4a0.png
+11:25:55.581 [Test worker] INFO  -    * Then google le debera mostrar paginas relacionadas con pinguinos
+11:25:55.581 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Send negative for processing for C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\5f39b9ffd21027524512d8c48a7a9baaddb3e2e6b18a9b7234d3eb8c773b5ce5.png
+11:25:55.581 [Test worker] INFO  -    * Then google le debera mostrar paginas relacionadas con pinguinos
+  ?[32mThen ?[0m?[32mgoogle le debera mostrar paginas relacionadas con pinguinos?[0m       ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:25)?[0m
+  ?[32mThen ?[0m?[32mgoogle le debera mostrar paginas relacionadas con pinguinos?[0m       ?[90m# com.training.api.stepdefinitions.SearchInGoogleStepDefinition.<init>(SearchInGoogleStepDefinition.java:25)?[0m
+11:25:56.328 [Test worker] INFO  - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+Buscar en Google 2
+----------------------------------------------------------------------------
+11:25:56.432 [Test worker] INFO  - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+Buscar en Google
+----------------------------------------------------------------------------
+]]></system-out>
+  <system-err><![CDATA[Oct 14, 2021 11:25:44 AM org.openqa.selenium.remote.DesiredCapabilities firefox
+INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
+Oct 14, 2021 11:25:44 AM org.openqa.selenium.remote.DesiredCapabilities firefox
+INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
+Oct 14, 2021 11:25:52 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Oct 14, 2021 11:25:52 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

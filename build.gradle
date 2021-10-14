@@ -1,0 +1,87 @@
+apply from: "https://gradle.avaldigitallabs.com/resources/java-serenity-project.gradle"
+
+defaultTasks 'clean', 'test', 'aggregate', 'json-summary'
+
+ext {
+    libs = [
+            slf4jApi: "org.slf4j:slf4j-api:${slf4jVersion}",
+            logback : "ch.qos.logback:logback-classic:${logbackVersion}",
+
+            test: [
+                    serenity: [
+                            core                   : "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+                            junit                  : "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+                            screenplay             : "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+                            screenplayWebdriver    : "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+                            cucumberJava           : "io.cucumber:cucumber-java8:${cucumberJVMVersion}",
+                            cucumberJunit          : "io.cucumber:cucumber-junit:${cucumberJVMVersion}",
+                            rest                   : "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
+                    ],
+                    junit: "junit:junit:${junitVersion}",
+                    assertj : "org.assertj:assertj-core:${assertJVersion}",
+                    hamcrest: "org.hamcrest:hamcrest-all:${hamcrestVersion}"
+            ]
+    ]
+}
+
+
+dependencies {
+
+    implementation libs.test.serenity.core
+    implementation libs.test.serenity.screenplay
+    implementation libs.test.serenity.junit
+    implementation libs.test.serenity.screenplayWebdriver
+    implementation libs.test.serenity.rest
+    implementation 'log4j:log4j:1.2.17'
+    implementation libs.logback
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+    implementation 'com.fasterxml.jackson.module:jackson-module-parameter-names:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.6.3'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation group: 'org.json', name: 'json', version: '20210307'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    // https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot
+    implementation group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+    // https://mvnrepository.com/artifact/com.applitools/eyes-common-java3
+    implementation group: 'com.applitools', name: 'eyes-common-java3', version: '3.206.0'
+    // https://mvnrepository.com/artifact/org.everit.json/org.everit.json.schema
+    implementation group: 'org.everit.json', name: 'org.everit.json.schema', version: '1.5.1'
+
+    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber6:${serenityCoreVersion}"
+    implementation "io.cucumber:cucumber-java8:${cucumberJVMVersion}"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '2.3.2.RELEASE'
+    implementation 'commons-logging:commons-logging:1.2'
+
+}
+
+
+
+serenity{
+    reports = ["json-summary"]
+}
+
+tasks.withType(Test) {
+    systemProperties System.getProperties()
+}
+
+sourceCompatibility = '1.8'
+gradle.startParameter.continueOnFailure = true
+description = 'AV Villas - E2E - Libre Inversión - Test Cases'
+test.finalizedBy(aggregate)
+
+task runAParallelSuite(type: Test) {
+    systemProperties System.getProperties()
+    def forks =4
+    println "The Maximum parallel is $forks"
+    maxParallelForks = forks
+    include '/ApiRunner.class'
+    testLogging.showStandardStreams = true
+}

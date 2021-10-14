@@ -1,0 +1,9 @@
+.gradle/
+target
+./target
+.idea
+./.idea
+jenkins_data
+./jenkins_data
+out
+./out

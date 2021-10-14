@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.training.api.runners.ApiRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="LAPTOP-3GDBUON0" time="0.0">
+  <properties/>
+  <system-out><![CDATA[11:25:40.046 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - webdriver.remote.url=http://localhost:4445/wd/hub
+11:25:40.062 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.base.url=http://localhost:8080/api/v3/
+11:25:40.063 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.linux.webdriver.gecko.driver=src/test/resources/webdriver/linux/geckodriver
+11:25:40.063 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.windows.webdriver.chrome.driver=src/test/resources/webdriver/windows/chromedriver.exe
+11:25:40.064 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.store.path.inventory=store/inventory
+11:25:40.065 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.project.name=com.training.api
+11:25:40.066 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.store.path.inventory=store/inventory
+11:25:40.067 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.mac.webdriver.chrome.driver=src/test/resources/webdriver/mac/chromedriver
+11:25:40.068 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.store.path.order=store/order
+11:25:40.068 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.store.path.inventory=store/inventory
+11:25:40.068 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.linux.webdriver.chrome.driver=src/test/resources/webdriver/linux/chromedriver
+11:25:40.068 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - enable.markdown=story narrative scenario step
+11:25:40.068 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.store.path.order=store/order
+11:25:40.069 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.windows.webdriver.gecko.driver=src/test/resources/webdriver/windows/geckodriver.exe
+11:25:40.069 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - feature.file.encoding=iso-8859-1
+11:25:40.069 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - webdriver.driver=remote
+11:25:40.070 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.mac.webdriver.gecko.driver=src/test/resources/webdriver/mac/geckodriver
+11:25:40.070 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.logging=VERBOSE
+11:25:40.070 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.base.url=http://localhost:8080/api/v3/
+11:25:40.071 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.include.actor.name.in.consequences=true
+11:25:40.072 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.base.url=http://localhost:8080/api/v3/
+11:25:40.072 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.store.path.order=store/order
+11:25:40.072 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - headless.mode=true
+11:25:40.907 [Test worker] INFO io.cucumber.core.plugin.SerenityReporter - Running feature from file:///C:/Users/Hacko/OneDrive/Documentos/SeleniumGrid/SerenityBase/src/test/resources/features/store.feature
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - webdriver.remote.url=http://localhost:4445/wd/hub
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.base.url=http://localhost:8080/api/v3/
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.linux.webdriver.gecko.driver=src/test/resources/webdriver/linux/geckodriver
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.windows.webdriver.chrome.driver=src/test/resources/webdriver/windows/chromedriver.exe
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.store.path.inventory=store/inventory
+11:25:41.309 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.project.name=com.training.api
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.store.path.inventory=store/inventory
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.mac.webdriver.chrome.driver=src/test/resources/webdriver/mac/chromedriver
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.store.path.order=store/order
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.store.path.inventory=store/inventory
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.linux.webdriver.chrome.driver=src/test/resources/webdriver/linux/chromedriver
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - enable.markdown=story narrative scenario step
+11:25:41.310 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.store.path.order=store/order
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.windows.webdriver.gecko.driver=src/test/resources/webdriver/windows/geckodriver.exe
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - feature.file.encoding=iso-8859-1
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - webdriver.driver=remote
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - drivers.mac.webdriver.gecko.driver=src/test/resources/webdriver/mac/geckodriver
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.logging=VERBOSE
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.default.rest.base.url=http://localhost:8080/api/v3/
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - serenity.include.actor.name.in.consequences=true
+11:25:41.311 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.dev.rest.base.url=http://localhost:8080/api/v3/
+11:25:41.314 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - environments.stg.rest.store.path.order=store/order
+11:25:41.314 [Test worker] DEBUG net.thucydides.core.util.PropertiesFileLocalPreferences - headless.mode=true
+11:25:41.326 [Test worker] INFO  - 
+
+-------------------------------------------------------------------------------------
+     _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
+    /       ||   ____||   _  \     |   ____||  \ |  | |  | |           |\   \  /   / 
+   |   (----`|  |__   |  |_)  |    |  |__   |   \|  | |  | `---|  |----` \   \/   /  
+    \   \    |   __|  |      /     |   __|  |  . `  | |  |     |  |       \_    _/   
+.----)   |   |  |____ |  |\  \----.|  |____ |  |\   | |  |     |  |         |  |     
+|_______/    |_______|| _| `._____||_______||__| \__| |__|     |__|         |__|    
+                                                                                     
+ News and tutorials at http://www.serenity-bdd.info                                  
+ Documentation at https://wakaleo.gitbooks.io/the-serenity-book/content/             
+ Join the Serenity Community on Gitter: https://gitter.im/serenity-bdd/serenity-core 
+ Serenity BDD Support and Training at http://serenity-bdd.info/#/trainingandsupport  
+-------------------------------------------------------------------------------------
+
+11:25:41.331 [Test worker] DEBUG net.thucydides.core.steps.StepEventBus - Test suite started for story net.thucydides.core.model.Story@b3253628
+11:25:41.340 [Test worker] INFO  - Test Suite Started: Store
+
+1 Scenarios (?[32m1 passed?[0m)
+3 Steps (?[32m3 passed?[0m)
+0m15.546s
+
+
+11:25:56.451 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Reporting formats: [JSON, HTML]
+11:25:56.614 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Reporting formats: [JSON, HTML]
+11:25:56.636 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Generating reports for 1 test outcomes using: net.thucydides.core.reports.json.JSONTestOutcomeReporter@55a4e7db
+11:25:56.637 [pool-1-thread-1] DEBUG net.thucydides.core.reports.ReportService - Processing test outcome Store:Buscar en Google
+11:25:56.637 [pool-1-thread-1] DEBUG net.thucydides.core.reports.ReportService - net.thucydides.core.reports.json.JSONTestOutcomeReporter@55a4e7db: Generating report for test outcome: Store:Buscar en Google
+11:25:56.642 [pool-1-thread-1] DEBUG net.thucydides.core.reports.json.JSONTestOutcomeReporter - Generating JSON report for Buscar en Google to file C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e.json (using temp file C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity\fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e.json1dd62c04-5bb4-4871-bede-3c2a8df71116)
+11:25:56.694 [pool-1-thread-1] DEBUG net.thucydides.core.reports.ReportService - Processing test outcome Store:Buscar en Google done
+11:25:56.695 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Shutting down executor service
+11:25:56.695 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Reports generated in: 59 ms
+11:25:56.695 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Generating reports for 1 test outcomes using: net.thucydides.core.reports.html.HtmlAcceptanceTestReporter@7cd83d2c
+11:25:56.696 [pool-2-thread-1] DEBUG net.thucydides.core.reports.ReportService - Processing test outcome Store:Buscar en Google
+11:25:56.696 [pool-2-thread-1] DEBUG net.thucydides.core.reports.ReportService - net.thucydides.core.reports.html.HtmlAcceptanceTestReporter@7cd83d2c: Generating report for test outcome: Store:Buscar en Google
+11:25:56.697 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATE TEST OUTCOME REPORT FOR Buscar en Google in fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e
+11:25:56.732 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.model.cucumber.CucumberParser - Added feature Store
+11:25:56.733 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.RequirementsTagProvider -  found:[Requirement{name='Store', type='feature' parent = 'null', cardNumber='null'}]
+11:25:56.738 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.BaseRequirementsService - Requirement found for test outcome Buscar en Google-[]: Optional[Requirement{name='Store', type='feature' parent = 'null', cardNumber='null'}]
+11:25:56.740 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.BaseRequirementsService - Requirement found for test outcome Buscar en Google-[]: Optional[Requirement{name='Store', type='feature' parent = 'null', cardNumber='null'}]
+11:25:56.763 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.BaseRequirementsService - Requirement found for test outcome Buscar en Google-[]: Optional[Requirement{name='Store', type='feature' parent = 'null', cardNumber='null'}]
+11:25:56.764 [pool-2-thread-1] DEBUG net.thucydides.core.requirements.BaseRequirementsService - Requirement found for test outcome Buscar en Google-[]: Optional[Requirement{name='Store', type='feature' parent = 'null', cardNumber='null'}]
+11:25:56.930 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - Generating report in fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e_screenshots.html
+11:25:57.763 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - Generated report fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e_screenshots.html in 833 ms
+11:25:57.765 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - GENERATING HTML REPORT FOR Store:Buscar en Google in fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e.html in directory C:\Users\Hacko\OneDrive\Documentos\SeleniumGrid\SerenityBase\target\site\serenity  
+11:25:57.769 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - Generating report in fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e.html
+11:25:57.894 [pool-2-thread-1] DEBUG net.thucydides.core.reports.html.HtmlAcceptanceTestReporter - Generated report fd2b1c83f6108e8f1b24aa4088c125a31686f080b85e3a6327f1711fcdeec07e.html in 125 ms
+11:25:57.895 [pool-2-thread-1] DEBUG net.thucydides.core.reports.ReportService - Processing test outcome Store:Buscar en Google done
+11:25:57.895 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Shutting down executor service
+11:25:57.895 [Test worker] DEBUG net.thucydides.core.reports.ReportService - Reports generated in: 1200 ms
+11:25:58.211 [Test worker] DEBUG net.serenitybdd.core.photography.Darkroom - Closing darkroom
+11:25:58.212 [Darkroom Processing Line] DEBUG net.serenitybdd.core.photography.DarkroomProcessingLine - Darkroom processing line shutting down
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (freemarker.cache).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+</testsuite>
