@@ -8,7 +8,6 @@ pipeline {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
                             steps {
-                                sh 'gradle -v'
                                 sh 'gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                             }
                 }
