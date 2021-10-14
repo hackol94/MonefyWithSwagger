@@ -2,6 +2,12 @@
 # Add the `-d` flag at the end for detached execution
 # To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-with-jenkins-selenium-grid.yml down`
 version: "3"
+networks: 
+  frontend: 
+    ipam:
+     config: 
+      - subnet: 172.20.0.0/24
+
 services:
   jenkins:
     user: root
@@ -13,6 +19,9 @@ services:
       - "8095:8080"
       - "4444:4444"
       - "50000:50000"
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.6
     depends_on:
       - selenium-router
     volumes:
@@ -27,6 +36,9 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "5557:5557"
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.7
     
   selenium-sessions:
     image: selenium/sessions:4.0.0-rc-1-prerelease-20210823
@@ -39,6 +51,9 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.8
 
   selenium-session-queue:
     image: selenium/session-queue:4.0.0-rc-1-prerelease-20210823
@@ -51,6 +66,9 @@ services:
       - SE_EVENT_BUS_HOST=selenium-event-bus
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.9
 
   selenium-distributor:
     image: selenium/distributor:4.0.0-rc-1-prerelease-20210823
@@ -69,10 +87,16 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.10
 
   selenium-router:
     image: selenium/router:4.0.0-rc-1-prerelease-20210823
     container_name: selenium-router
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.11
     hostname: grid
     domainname: grid.com
     ports:
@@ -102,6 +126,9 @@ services:
       - SE_NODE_MAX_SESSIONS=2
     ports:
       - "6900:5900"
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.12
 
   edge:
     image: selenium/node-edge:4.0.0-rc-1-prerelease-20210823
@@ -116,6 +143,9 @@ services:
       - SE_NODE_MAX_SESSIONS=2
     ports:
       - "6901:5900"
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.13
 
   firefox:
     image: selenium/node-firefox:4.0.0-rc-1-prerelease-20210823
@@ -130,4 +160,7 @@ services:
       - SE_NODE_MAX_SESSIONS=2
     ports:
       - "6902:5900"
+    networks:
+       frontend:
+         ipv4_address: 172.20.0.13
 
