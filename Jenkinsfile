@@ -1,19 +1,18 @@
-    
-    node 
-    {
-        stage('Run Tests') 
-        def stages = [:]
-        stages["firefox"] = {
-        
-                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
-        
+pipeline {
+    agent any
+    stages {
+        stage("Run Suit Test") {
+            parallel {
+                stage("Cross Browser Testing in Chrome") {
+                            steps {
+                                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
+                            }
+                }
+                stage("Cross Browser Testing in Chrome") {
+                            steps {
+                                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
+                            }
+                }
         }
-        stages["chrome"] = {
-            
-                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
-          
-        }
-        parallel(stages)
-
-
-        }
+    }
+}
