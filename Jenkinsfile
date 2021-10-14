@@ -7,7 +7,6 @@
 
     stage ('Artifactory configuration') {
         // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
-        rtGradle = Artifactory.newGradleBuild()
         rtGradle.tool = "Gradle 7.3" // Tool name from Jenkins configuration
         
     }
