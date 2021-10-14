@@ -8,9 +8,9 @@ pipeline {
                                 sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                             }
                 }
-                stage("Cross Browser Testing in Chrome") {
+                stage("Cross Browser Testing in firefox") {
                             steps {
-                                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
+                                sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
                             }
                 }
           }
