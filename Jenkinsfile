@@ -13,6 +13,7 @@ pipeline {
                                 sh './gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                             }
                 }
-        }
-    }
+          }
+      }
+  }
 }
