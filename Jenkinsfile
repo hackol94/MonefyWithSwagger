@@ -1,5 +1,7 @@
 pipeline {
     agent any
+    tools {
+     gradle "Gradle 6.9.1"}
     stages {
         stage("Run Suit Test") {
             parallel {
