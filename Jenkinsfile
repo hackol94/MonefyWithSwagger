@@ -1,3 +1,5 @@
+    import hudson.model.*
+
     stage('Run Tests') 
         def stages = [:]
 
