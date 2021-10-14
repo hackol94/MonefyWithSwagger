@@ -1,4 +1,4 @@
-# To execute this docker-compose yml file use `docker-compose -f docker-compose-with-jenkins-selenium-grid.yml up`
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-with-jenkins-selenium-grid.yml up --build`
 # Add the `-d` flag at the end for detached execution
 # To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-with-jenkins-selenium-grid.yml down`
 version: "3"
@@ -13,6 +13,8 @@ services:
       - "8095:8080"
       - "4444:4444"
       - "50000:50000"
+    depends_on:
+      - selenium-router
     volumes:
       - ./gradle-7.2:/opt/gradle/gradle-7.2
       - ./jenkins_data:/var/jenkins_home
@@ -25,7 +27,7 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "5557:5557"
-
+    
   selenium-sessions:
     image: selenium/sessions:4.0.0-rc-1-prerelease-20210823
     container_name: selenium-sessions
@@ -84,7 +86,7 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
-      
+ 
   chrome:
     image: selenium/node-chrome:4.0.0-rc-1-prerelease-20210823
     shm_size: 2gb
