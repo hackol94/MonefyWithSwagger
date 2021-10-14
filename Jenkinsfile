@@ -6,7 +6,15 @@
         }
         stages["chrome"] = {
             sh 'gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
+            
         }
-
         parallel(stages)
-    
+    post { 
+        always {
+            script {
+                if (getContext(hudson.FilePath)) {
+                    
+                }
+            }
+        }
+    }
