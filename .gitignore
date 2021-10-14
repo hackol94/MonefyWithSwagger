@@ -7,3 +7,5 @@ jenkins_data
 ./jenkins_data
 out
 ./out
+build
+./build
