@@ -7,12 +7,9 @@
 
     stage ('Artifactory configuration') {
         // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
-        server = Artifactory.server SERVER_ID
-
         rtGradle = Artifactory.newGradleBuild()
-        rtGradle.tool = CONTAINER_GRADLE_TOOL // Tool name from Jenkins configuration
-        rtGradle.deployer repo:ARTIFACTORY_LOCAL_RELEASE_REPO,  server: server
-        rtGradle.resolver repo:ARTIFACTORY_VIRTUAL_RELEASE_REPO, server: server
+        rtGradle.tool = "Gradle 7.3" // Tool name from Jenkins configuration
+        
     }
         stage('Run Tests') 
         def stages = [:]
