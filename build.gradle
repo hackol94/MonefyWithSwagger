@@ -86,5 +86,5 @@ task runAParallelSuite(type: Test) {
     testLogging.showStandardStreams = true
 }
 task wrapper(type: Wrapper) {
-    gradleVersion = '6.9.1'
+    gradleVersion = '4.1'
 }
