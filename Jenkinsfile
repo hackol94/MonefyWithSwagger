@@ -5,12 +5,12 @@
         def stages = [:]
         stages["firefox"] = {
           script{
-                gradlew('gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"') 
+                sh ('./gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"') 
           }
         }
         stages["chrome"] = {
             script{
-                gradlew('gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"') 
+                sh ('./gradlew test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"') 
           }
         }
         parallel(stages)
