@@ -57,7 +57,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-cucumber6:${serenityCoreVersion}"
     implementation "io.cucumber:cucumber-java8:${cucumberJVMVersion}"
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '2.3.2.RELEASE'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '2.3.2.RELEASE'
     implementation 'commons-logging:commons-logging:1.2'
 
 }
