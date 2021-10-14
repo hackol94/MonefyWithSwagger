@@ -1,4 +1,6 @@
-    stage('Run Tests') 
+    node 
+    {
+        stage('Run Tests') 
         def stages = [:]
         stages["firefox"] = {
           script{
@@ -11,3 +13,4 @@
           }
         }
         parallel(stages)
+  }
