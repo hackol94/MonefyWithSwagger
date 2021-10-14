@@ -85,3 +85,6 @@ task runAParallelSuite(type: Test) {
     include '/ApiRunner.class'
     testLogging.showStandardStreams = true
 }
+task wrapper(type: Wrapper) {
+    gradleVersion = '6.9.1'
+}
