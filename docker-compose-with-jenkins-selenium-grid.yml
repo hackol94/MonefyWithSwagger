@@ -73,6 +73,8 @@ services:
   selenium-router:
     image: selenium/router:4.0.0-rc-1-prerelease-20210823
     container_name: selenium-router
+    hostname: grid
+    domainname: grid.com
     ports:
       - "4445:4444"
     depends_on:
@@ -86,8 +88,6 @@ services:
       - SE_SESSIONS_MAP_PORT=5556
       - SE_SESSION_QUEUE_HOST=selenium-session-queue
       - SE_SESSION_QUEUE_PORT=5559
-     extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   chrome:
     image: selenium/node-chrome:4.0.0-rc-1-prerelease-20210823
