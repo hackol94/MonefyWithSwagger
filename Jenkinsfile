@@ -8,7 +8,7 @@ pipeline {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
                             steps {
-                                
+                                echo Boolean.getBoolean(Firefox)
                                 if(Boolean.getBoolean(Chrome)){
                                     sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
                                     sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
