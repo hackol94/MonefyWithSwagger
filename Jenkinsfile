@@ -3,16 +3,13 @@ pipeline {
     tools {
      gradle "Gradle 6.9.1"
      }
-    boolean chrome_run = Boolean.getBoolean(Chrome);
-    boolean firefox_run = Boolean.getBoolean(Firefox);
-
-    stages {
+     stages {
         stage("Run Suit Test") {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
                             steps {
                                 script {
-                                if(chrome_run){
+                                if(Boolean.getBoolean(Chrome)){
                                     sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
                                     sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                                     publishHTML (target: [
@@ -32,7 +29,7 @@ pipeline {
                 stage("Cross Browser Testing in firefox") {
                             steps {
                                 script {
-                                 if(chrome_run){
+                                 if(Boolean.getBoolean(Firefox)){
                                     sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
                                     sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
                                     publishHTML (target: [
