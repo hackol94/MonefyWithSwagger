@@ -10,8 +10,9 @@ pipeline {
         stage("Run Suit Test") {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
+                            if(chrome_run){
                             steps {
-                                if(chrome_run){
+                                
                                     sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
                                     sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                                     publishHTML (target: [
@@ -22,14 +23,16 @@ pipeline {
                                         reportFiles: 'index.html',
                                         reportName: "Test Report[Chrome]"
                                         ])
-                                }else{
+                                
+                            }
+                            }else{
                                     echo 'Ignore navigator'
                                 }
-                            }
                 }
                 stage("Cross Browser Testing in firefox") {
-                            steps {
-                                 if(chrome_run){
+                            if(chrome_run){
+                                steps {
+                                 
                                     sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
                                     sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
                                     publishHTML (target: [
@@ -40,11 +43,11 @@ pipeline {
                                         reportFiles: 'index.html',
                                         reportName: "Test Report[Firefox]"
                                         ])
-                                }else{
-                                    echo 'Ignore navigator'
-                                }
                                 
                             }
+                                                            }else{
+                                    echo 'Ignore navigator'
+                                }
                 }
           }
       }
