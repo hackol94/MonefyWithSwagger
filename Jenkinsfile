@@ -8,8 +8,9 @@ pipeline {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
                             steps {
-                                    echo "${Chrome}"
-                                    sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
+                                    script{
+                                        if(${Chrome} == true){
+                                            sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
                                     sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
                                     publishHTML (target: [
                                         allowMissing: false,
@@ -18,7 +19,10 @@ pipeline {
                                         reportDir: '../SeleniumGripParallelCrossBrowserTesting/chrome/target/site/serenity',
                                         reportFiles: 'index.html',
                                         reportName: "Test Report[Chrome]"
-                                        ])
+                                        ])        
+                                        }
+                                    }
+                                    
                             }
                 }
                 stage("Cross Browser Testing in firefox") {
