@@ -14,8 +14,8 @@ pipeline {
                                     allowMissing: false,
                                     alwaysLinkToLastBuild: false,
                                     keepAll: true,
-                                    reportDir: 'coverage',
-                                    reportFiles: '../SeleniumGripParallelCrossBrowserTesting/chrome/target/site/serenityindex.html',
+                                    reportDir: '../SeleniumGripParallelCrossBrowserTesting/chrome/target/site/serenity',
+                                    reportFiles: 'index.html',
                                     reportName: "Test Report[Chrome]"
                                     ])
                             }
@@ -28,8 +28,8 @@ pipeline {
                                     allowMissing: false,
                                     alwaysLinkToLastBuild: false,
                                     keepAll: true,
-                                    reportDir: 'coverage',
-                                    reportFiles: '../SeleniumGripParallelCrossBrowserTesting/firefox/target/site/serenityindex.html',
+                                    reportDir: '../SeleniumGripParallelCrossBrowserTesting/firefox/target/site/serenity',
+                                    reportFiles: 'index.html',
                                     reportName: "Test Report[Firefox]"
                                     ])
                             }
