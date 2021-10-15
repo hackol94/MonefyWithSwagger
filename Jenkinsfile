@@ -8,7 +8,7 @@ pipeline {
             parallel {
                 stage("Cross Browser Testing in Chrome") {
                             steps {
-                                script {
+                                
                                 if(Boolean.getBoolean(Chrome)){
                                     sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
                                     sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
@@ -23,12 +23,12 @@ pipeline {
                                 }else{
                                     echo 'Ignore navigator'
                                 }
-                                }
+                                
                             }
                 }
                 stage("Cross Browser Testing in firefox") {
                             steps {
-                                script {
+                                
                                  if(Boolean.getBoolean(Firefox)){
                                     sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
                                     sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
@@ -43,7 +43,7 @@ pipeline {
                                 }else{
                                     echo 'Ignore navigator'
                                 }
-                                }
+                                
                             }
                 }
           }
