@@ -27,6 +27,8 @@ pipeline {
                 }
                 stage("Cross Browser Testing in firefox") {
                             steps {
+                                script{
+                                        if("${Chrome}" == "true"){
                                     sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
                                     sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
                                     publishHTML (target: [
@@ -37,6 +39,8 @@ pipeline {
                                         reportFiles: 'index.html',
                                         reportName: "Test Report[Firefox]"
                                         ])
+                                        }
+                                        }
                             }
                 }
           }
