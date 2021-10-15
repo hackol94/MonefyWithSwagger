@@ -43,6 +43,24 @@ pipeline {
                                         }
                             }
                 }
+                stage("Cross Browser Testing in Edge") {
+                            steps {
+                                script{
+                                        if("${Edge}" == "true"){
+                                    sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
+                                    sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=edge"'
+                                    publishHTML (target: [
+                                        allowMissing: false,
+                                        alwaysLinkToLastBuild: false,
+                                        keepAll: true,
+                                        reportDir: '../SeleniumGripParallelCrossBrowserTesting/firefox/target/site/serenity',
+                                        reportFiles: 'index.html',
+                                        reportName: "Test Report[Firefox]"
+                                        ])
+                                        }
+                                        }
+                            }
+                }
           }
       }
   }
