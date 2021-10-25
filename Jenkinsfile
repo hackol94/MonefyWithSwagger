@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-     gradle "Gradle 6.9.1"
+     gradle "Gradle 6.7"
      }
      stages {
         stage("Run Suit Test") {

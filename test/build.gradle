@@ -1,6 +1,6 @@
 apply from: "https://gradle.avaldigitallabs.com/resources/java-serenity-project.gradle"
 
-defaultTasks 'clean', 'test', 'json-summary'
+defaultTasks 'clean', 'test', 'aggregate', 'json-summary'
 
 ext {
     libs = [
@@ -75,6 +75,7 @@ tasks.withType(Test) {
 sourceCompatibility = '1.8'
 gradle.startParameter.continueOnFailure = true
 description = 'AV Villas - E2E - Libre Inversión - Test Cases'
+test.finalizedBy(aggregate)
 
 task runAParallelSuite(type: Test) {
     systemProperties System.getProperties()
