@@ -27,7 +27,7 @@ public class ApiCast extends Cast {
             newActor.can(BrowseTheWeb.with(theDefaulteBrowserFor(actorName)));
             System.out.println("BrowserOK");
         }
-
+        System.out.println("CONTExto : ------ " + testEnvironments.getContext());
         newActor.remember(Constant.BASE_URL, testEnvironments.getUrlBase());
         newActor.remember(Constant.PATH_INVENTORY, testEnvironments.getPathInventory());
         newActor.remember(Constant.PATH_ORDER, testEnvironments.getPathOrder());
