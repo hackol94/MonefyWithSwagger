@@ -10,7 +10,16 @@ pipeline {
                             steps {
                                     script{
                                         if("${Chrome}" == "true"){
-                                            sh 'cd test && gradle test -Dcontext=chrome -Denvironment=stg "-Dwebdriver.remote.driver=chrome" -Dinjected.tags="browser:chrome"'
+                                            sh 'rm -r -f chrome && mkdir chrome && cp -r ./test/* chrome/'
+                                    sh 'cd ./chrome && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome"'
+                                    publishHTML (target: [
+                                        allowMissing: false,
+                                        alwaysLinkToLastBuild: false,
+                                        keepAll: true,
+                                        reportDir: '../SeleniumGripParallelCrossBrowserTesting/chrome/target/site/serenity',
+                                        reportFiles: 'index.html',
+                                        reportName: "Test Report[Chrome]"
+                                        ])        
                                         }
                                     }
                                     
@@ -20,27 +29,21 @@ pipeline {
                             steps {
                                 script{
                                         if("${Firefox}" == "true"){
-                                    sh 'cd test && gradle test -Dcontext=firefox -Denvironment=stg "-Dwebdriver.remote.driver=firefox" -Dinjected.tags="browser:firefox"'
+                                    sh 'rm -r -f firefox && mkdir firefox && cp -r ./test/* firefox/'
+                                    sh 'cd ./firefox && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox"'
+                                    publishHTML (target: [
+                                        allowMissing: false,
+                                        alwaysLinkToLastBuild: false,
+                                        keepAll: true,
+                                        reportDir: '../SeleniumGripParallelCrossBrowserTesting/firefox/target/site/serenity',
+                                        reportFiles: 'index.html',
+                                        reportName: "Test Report[Firefox]"
+                                        ])
                                         }
                                         }
                             }
                 }
           }
       }
-      stage("HTML"){
-                    steps{
-                        script{
-                                    sh 'gradle aggregate'
-                                        publishHTML (target: [
-                                            allowMissing: false,
-                                            alwaysLinkToLastBuild: false,
-                                            keepAll: true,
-                                            reportDir: '../SeleniumGripParallelCrossBrowserTesting/target/site/serenity',
-                                            reportFiles: 'index.html',
-                                            reportName: "Test Report[CrossBrowser]"
-                                        ])
-                                        }
-                    }
-                }
   }
 }
