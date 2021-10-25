@@ -31,7 +31,7 @@ pipeline {
                                             allowMissing: false,
                                             alwaysLinkToLastBuild: false,
                                             keepAll: true,
-                                            reportDir: '../SeleniumGripParallelCrossBrowserTesting/firefox/target/site/serenity',
+                                            reportDir: '../SeleniumGripParallelCrossBrowserTesting/target/site/serenity',
                                             reportFiles: 'index.html',
                                             reportName: "Test Report[Firefox]"
                                         ])
