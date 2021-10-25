@@ -13,7 +13,7 @@ public class TestEnvironments {
     }
 
     public String getContext (){
-        return EnvironmentSpecificConfiguration.from(this.testEnvironments).toString();
+        return EnvironmentSpecificConfiguration.from(this.testEnvironments).getProperty("context");
     }
 
     public String getUrlBase (){
