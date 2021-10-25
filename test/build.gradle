@@ -75,7 +75,6 @@ tasks.withType(Test) {
 sourceCompatibility = '1.8'
 gradle.startParameter.continueOnFailure = true
 description = 'AV Villas - E2E - Libre Inversión - Test Cases'
-test.finalizedBy(aggregate)
 
 task runAParallelSuite(type: Test) {
     systemProperties System.getProperties()
