@@ -1,6 +1,6 @@
 apply from: "https://gradle.avaldigitallabs.com/resources/java-serenity-project.gradle"
 
-defaultTasks 'clean', 'test', 'aggregate', 'json-summary'
+defaultTasks 'clean', 'test', 'json-summary'
 
 ext {
     libs = [
