@@ -25,7 +25,9 @@ pipeline {
                                         }
                             }
                 }
-                stage("HTML"){
+          }
+      }
+      stage("HTML"){
                     steps{
                             publishHTML (target: [
                                             allowMissing: false,
@@ -37,7 +39,5 @@ pipeline {
                                         ])
                     }
                 }
-          }
-      }
   }
 }
