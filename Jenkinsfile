@@ -10,7 +10,7 @@ pipeline {
                             steps {
                                     script{
                                         if("${Chrome}" == "true"){
-                                            sh 'gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome" -Dcontext=Chrome'
+                                            sh 'cd test && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=chrome" -Dcontext=Chrome'
                                         }
                                     }
                                     
@@ -20,7 +20,7 @@ pipeline {
                             steps {
                                 script{
                                         if("${Firefox}" == "true"){
-                                    sh 'gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox" -Dcontext=Firefox'
+                                    sh 'cd test && gradle clean test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox" -Dcontext=Firefox'
                                         }
                                         }
                             }
