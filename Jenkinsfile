@@ -4,7 +4,7 @@ pipeline {
      gradle "Gradle 6.7"
      }
      stages {
-        stage("Run Suit Test") {
+        steps("Run Suit Test") {
             parallel {
                 stage("Clear test secuencial") {
                             steps {
