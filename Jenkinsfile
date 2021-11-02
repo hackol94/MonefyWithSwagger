@@ -63,7 +63,7 @@ pipeline {
                             steps {
                                 script{
                                         if("${Firefox}" == "true"){
-                                    sh 'cd ./test && gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox" -Dcontext=chrome'
+                                    sh 'cd ./test && gradle test aggregate -Denvironment=stg --no-build-cache "-Dwebdriver.remote.driver=firefox" -Dcontext=firefox'
                                         }
                                         }
                             }
