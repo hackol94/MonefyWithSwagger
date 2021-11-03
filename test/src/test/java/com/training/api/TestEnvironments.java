@@ -12,9 +12,9 @@ public class TestEnvironments {
         this.testEnvironments = testEnvironments;
     }
 
-    public String getContext (){
-        return EnvironmentSpecificConfiguration.from(this.testEnvironments).getProperty("context");
-    }
+   // public String getContext (){
+     //   return EnvironmentSpecificConfiguration.from(this.testEnvironments).getProperty("context");
+    //}
 
     public String getUrlBase (){
         return EnvironmentSpecificConfiguration.from(this.testEnvironments)
